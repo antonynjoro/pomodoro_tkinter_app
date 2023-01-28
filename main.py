@@ -1,6 +1,5 @@
 from tkinter import *
-import time
-from datetime import time as t
+
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -16,6 +15,8 @@ checkmarks = ""
 countdown_timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
+
+
 def reset_timer():
     global reps
     reps = 0
@@ -35,7 +36,7 @@ def start_timer():
     short_break_sec = SHORT_BREAK_MIN * 60
     long_break_sec = LONG_BREAK_MIN * 60
 
-    if reps == 8 :
+    if reps == 8:
         count_down(long_break_sec)
         title.config(text=f"Long Break", fg=RED)
         reset_timer()
@@ -47,9 +48,9 @@ def start_timer():
         title.config(text=f"Work", fg=GREEN)
 
 
-
-
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+
+
 def count_down(time):
     global checkmarks
     minutes, seconds = divmod(time, 60)
@@ -68,11 +69,9 @@ def count_down(time):
     else:
         checkmarks = ""
         for rep in range(0, reps, 2):
-            checkmarks += ("✓")
+            checkmarks += "✓"
 
         checkmark.config(text=checkmarks)
-
-
 
 # ---------------------------- UI SETUP ------------------------------- #
 
